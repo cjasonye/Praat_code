@@ -15,7 +15,7 @@ form Mix speech with noise
 	sentence noise_folder ./Stimuli/Babble_noise_16_talkers/
 	sentence output_folder ./Stimuli/Audio_with_noise/
 	real desired_SNR 0
-	optionmenu finalIntensity: 3
+	optionmenu finalIntensity: 2
 		option match final intensity to stimulus intensity
 		option maximize (scale peaks to plus/minus 1)
 		option just add noise to signal (don't scale result)
@@ -149,4 +149,5 @@ plus noiseList
 Remove
 printline Done!
 	
+
 	
