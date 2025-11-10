@@ -18,7 +18,7 @@ form Mix speech with noise
 	comment Give a new average SPL (dB) that will be applied to the sound before generating noise.
 	comment SPL remains the same if the value is not greater than 10 dB.
 	real desired_int 55
-	optionmenu finalIntensity: 1
+	optionmenu finalIntensity: 3
 		option match final intensity to (adjusted) stimulus intensity
 		option maximize (scale peaks to plus/minus 1)
 		option just add noise to signal (don't scale result)
@@ -42,7 +42,7 @@ noiseList = Create Strings as file list... noiseList 'noise_folder$'*.wav
 nNoise = Get number of strings
 
 if nStim > nNoise
-	appendInfoLine "There are more stimuli than noise files. Noise files will thus be used more than once."
+	appendInfoLine: "There are more stimuli than noise files. Noise files will thus be used more than once."
 endif
 
 # Read each stimulus and noise
@@ -164,4 +164,5 @@ plus noiseList
 Remove
 printline Done!
 	
+
 	
