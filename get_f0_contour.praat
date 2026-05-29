@@ -62,9 +62,6 @@ for ifile from 1 to numberOfFiles
 		endif
 	endfor
 
-	select Sound 'soundname$'
-	plusObject: pitch
-	pointprocess = To PointProcess (cc)
 	removeObject: pitch
 
 endfor
