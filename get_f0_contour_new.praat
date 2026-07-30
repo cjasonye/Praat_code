@@ -6,6 +6,10 @@ form Get pitch contour
 	text pitchfile ./data/pitchfile_1.txt
 	comment Time step for extracting the f0 (default is 0.01 s)
 	real time_step_pitch 0.01
+	comment floor pitch search floor
+	real floor 70
+	comment ceiling pitch search top
+	real ceiling 300
 endform
 
 # Make a listing of all the sound files in a directory:
@@ -38,7 +42,7 @@ for ifile from 1 to numberOfFiles
 
 	# get the pointprocess
 	select Sound 'soundname$'
-	pitch = To Pitch (filtered autocorrelation): 0.0, 50, 800, 15, "no", 0.03, 0.09, 0.50, 0.055, 0.35, 0.14
+	pitch = To Pitch (filtered autocorrelation): 0.0, floor, ceiling, 15, "no", 0.03, 0.09, 0.50, 0.055, 0.35, 0.14
 
 	number_of_steps = floor(duration_s / time_step_pitch)
 	
